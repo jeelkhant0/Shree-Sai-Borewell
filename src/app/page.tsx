@@ -1,6 +1,5 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import { useSplash } from "@/context/SplashContext";
 import Navbar from "@/components/UI/Navbar";
 import Hero from "@/components/Hero/Hero";
@@ -20,10 +19,10 @@ const Quality = dynamic(() => import("@/components/Quality/Quality"), { ssr: fal
 const Contact = dynamic(() => import("@/components/Contact/Contact"), { ssr: false });
 const Footer = dynamic(() => import("@/components/UI/Footer"), { ssr: false });
 
-// 3D scene — only load after splash
+// 3D scene — loaded immediately (no SSR) so models download during splash
 const BorewellScene = dynamic(() => import("@/components/Scene/BorewellScene"), {
   ssr: false,
-  loading: () => null
+  loading: () => null,
 });
 
 export default function Home() {
@@ -33,8 +32,15 @@ export default function Home() {
     <main>
       <Navbar />
       <Hero />
-      {/* 3D Scene — loads only after splash is dismissed */}
-      {!isSplashVisible && <BorewellScene />}
+
+      {/*
+             * BorewellScene is ALWAYS mounted so the GLB files download
+             * during the 3-second splash screen and are ready instantly.
+             * We just hide it visually until splash is done.
+             */}
+      <div style={{ visibility: isSplashVisible ? 'hidden' : 'visible' }}>
+        <BorewellScene />
+      </div>
 
       <div style={{ position: 'relative', zIndex: 10 }}>
         <About />

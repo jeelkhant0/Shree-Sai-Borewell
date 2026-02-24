@@ -60,7 +60,8 @@ export const DrillingStory = () => {
     );
 };
 
-// Preload removed to prevent memory spikes with 40MB+ models
-// useGLTF.preload("/base_basic_shaded.glb");
-// useGLTF.preload("/base_basic_pbr.glb");
-// useGLTF.preload("/trkman.glb");
+// Preload models at module-load time so they're in cache when Canvas mounts
+// The HTML <link rel="preload"> in layout.tsx also starts the network fetch earlier
+useGLTF.preload("/trkman.glb");
+useGLTF.preload("/dig.glb");
+

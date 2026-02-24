@@ -20,24 +20,18 @@ function ResponsiveCamera() {
 }
 
 const BorewellScene = () => {
-    const [shouldRender, setShouldRender] = useState(false);
     const [isMobileDevice, setIsMobileDevice] = useState(false);
 
     useEffect(() => {
-        // Skip WebGL on phones — saves GPU, battery, and prevents scroll jank
-        const isMobile = window.innerWidth < 768;
-        setIsMobileDevice(isMobile);
-
-        if (!isMobile) {
-            // Small delay so the main page paints first, then load 3D
-            const t = setTimeout(() => setShouldRender(true), 400);
-            return () => clearTimeout(t);
-        }
+        // Skip WebGL entirely on phones — saves GPU, battery, prevents scroll jank
+        setIsMobileDevice(window.innerWidth < 768);
     }, []);
 
-    // Don't render anything on mobile — Hero looks fine without the 3D bg
-    if (isMobileDevice || !shouldRender) return null;
+    // Don't render anything on mobile
+    if (isMobileDevice) return null;
 
+    // Render immediately on desktop — no artificial delay
+    // Models are preloaded via <link rel="preload"> in layout.tsx
     return (
         <div style={{ width: "100%", height: "100%", position: "absolute", top: 0, left: 0, zIndex: 1 }}>
             <Canvas

@@ -189,6 +189,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        {/* Preload 3D models so they are ready when BorewellScene mounts */}
+        <link rel="preload" href="/trkman.glb" as="fetch" crossOrigin="anonymous" />
+        <link rel="preload" href="/dig.glb" as="fetch" crossOrigin="anonymous" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
