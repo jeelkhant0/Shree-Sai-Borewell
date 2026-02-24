@@ -12,8 +12,9 @@ function ResponsiveCamera() {
     return (
         <PerspectiveCamera
             makeDefault
-            position={isMobile ? [25, 12, 25] : [18, 8, 18]}
-            fov={isMobile ? 60 : 50}
+            // Moved camera much closer — models now fill more of the viewport
+            position={isMobile ? [16, 7, 16] : [11, 5, 11]}
+            fov={isMobile ? 65 : 55}
         />
     );
 }
