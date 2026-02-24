@@ -2,14 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import dynamic from 'next/dynamic';
 import Image from 'next/image';
-
-// Lazy load the 3D scene to prioritize layout
-const BorewellFooterScene = dynamic(() => import('../Footer/BorewellFooterScene'), {
-    ssr: false,
-    loading: () => <div style={{ height: '200px' }} />
-});
 
 const Footer = () => {
     return (
@@ -98,16 +91,7 @@ const Footer = () => {
                     </div>
                 </div>
 
-                {/* Column 2: 3D Model — hidden on mobile via CSS/JS inside the component */}
-                <div style={{
-                    height: '300px',
-                    background: 'radial-gradient(circle at center, rgba(38,198,218,0.1) 0%, transparent 70%)',
-                    borderRadius: '20px',
-                }}>
-                    <BorewellFooterScene />
-                </div>
-
-                {/* Column 3: Links & Contact — responsive 2-col sub-grid */}
+                {/* Links & Contact — responsive 2-col sub-grid */}
                 <div style={{
                     display: 'grid',
                     gridTemplateColumns: '1fr 1fr',
