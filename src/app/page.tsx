@@ -4,11 +4,9 @@ import { useSplash } from "@/context/SplashContext";
 import Navbar from "@/components/UI/Navbar";
 import Hero from "@/components/Hero/Hero";
 import dynamic from "next/dynamic";
-
-// Eagerly-loaded above-the-fold sections
 import About from "@/components/About/About";
 
-// Lazily loaded below-the-fold sections — reduces initial bundle size
+// Lazily loaded below-the-fold sections
 const WhyChooseUs = dynamic(() => import("@/components/WhyChooseUs/WhyChooseUs"), { ssr: false });
 const Process = dynamic(() => import("@/components/Process/Process"), { ssr: false });
 const Beneficiaries = dynamic(() => import("@/components/Beneficiaries/Beneficiaries"), { ssr: false });
@@ -19,7 +17,7 @@ const Quality = dynamic(() => import("@/components/Quality/Quality"), { ssr: fal
 const Contact = dynamic(() => import("@/components/Contact/Contact"), { ssr: false });
 const Footer = dynamic(() => import("@/components/UI/Footer"), { ssr: false });
 
-// 3D scene — loaded immediately (no SSR) so models download during splash
+// 3D Scene — loaded immediately so models download during the splash screen
 const BorewellScene = dynamic(() => import("@/components/Scene/BorewellScene"), {
   ssr: false,
   loading: () => null,
@@ -34,9 +32,12 @@ export default function Home() {
       <Hero />
 
       {/*
-             * BorewellScene is ALWAYS mounted so the GLB files download
-             * during the 3-second splash screen and are ready instantly.
-             * We just hide it visually until splash is done.
+             * BorewellScene is ALWAYS mounted so WebGL context & GLB files
+             * are initialized during the 3-second splash.
+             * - During splash: hidden (visibility:hidden keeps it off-screen but active)
+             * - After splash: visible. The scene itself fades in via opacity transition
+             *   only once Three.js signals models are on the GPU (SceneReadyNotifier).
+             * This completely eliminates any visible "pop" or delay.
              */}
       <div style={{ visibility: isSplashVisible ? 'hidden' : 'visible' }}>
         <BorewellScene />
