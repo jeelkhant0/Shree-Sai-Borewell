@@ -12,42 +12,35 @@ function ResponsiveCamera() {
     return (
         <PerspectiveCamera
             makeDefault
-            // Moved camera much closer — models now fill more of the viewport
-            position={isMobile ? [16, 7, 16] : [11, 5, 11]}
+            // Slightly pulled back from previous [11,5,11] — models still big but not overwhelming
+            position={isMobile ? [16, 7, 16] : [14, 6, 14]}
             fov={isMobile ? 65 : 55}
         />
     );
 }
 
-// Notifies parent when models are fully loaded and rendered
+// Fires callback on the very first frame after Suspense content is ready
 function SceneReadyNotifier({ onReady }: { onReady: () => void }) {
-    const { gl } = useThree();
     useEffect(() => {
-        // Wait one frame after first render to ensure models are on GPU
-        let raf: number;
-        const handleReady = () => {
-            raf = requestAnimationFrame(() => {
-                onReady();
-            });
-        };
-        handleReady();
+        const raf = requestAnimationFrame(onReady);
         return () => cancelAnimationFrame(raf);
     }, [onReady]);
     return null;
 }
 
-const BorewellScene = () => {
+// Accepts splashDone so it can combine model-ready + splash-ended into one opacity
+const BorewellScene = ({ splashDone }: { splashDone: boolean }) => {
     const [isMobileDevice, setIsMobileDevice] = useState(false);
-    const [opacity, setOpacity] = useState(0);
+    const [modelsReady, setModelsReady] = useState(false);
 
     useEffect(() => {
         setIsMobileDevice(window.innerWidth < 768);
     }, []);
 
-    const handleReady = useCallback(() => {
-        // Smooth fade-in once models are parsed & on GPU
-        setOpacity(1);
-    }, []);
+    const handleReady = useCallback(() => setModelsReady(true), []);
+
+    // Both conditions must be true before we show anything
+    const isVisible = modelsReady && splashDone;
 
     if (isMobileDevice) return null;
 
@@ -58,9 +51,12 @@ const BorewellScene = () => {
             position: "absolute",
             top: 0, left: 0,
             zIndex: 1,
-            opacity,
-            // Smooth fade — eliminates the visible "pop"
-            transition: "opacity 0.5s ease-in-out",
+            // Single opacity controls everything — no visibility:hidden flash
+            opacity: isVisible ? 1 : 0,
+            // Faster fade: 0.25s feels instant but still smooth
+            transition: "opacity 0.25s ease-out",
+            // Pointer events only when visible — prevents click-through during load
+            pointerEvents: isVisible ? "auto" : "none",
         }}>
             <Canvas
                 dpr={[1, 1.2]}
@@ -85,7 +81,6 @@ const BorewellScene = () => {
                 <pointLight position={[-10, 5, -10]} intensity={1.5} color="#26c6da" distance={100} />
                 <spotLight position={[5, 10, -5]} angle={0.5} penumbra={1} intensity={2.5} color="#00e5ff" />
 
-                {/* Suspense wraps model loading — SceneReadyNotifier fires after models render */}
                 <Suspense fallback={null}>
                     <DrillingStory />
                     <SceneReadyNotifier onReady={handleReady} />

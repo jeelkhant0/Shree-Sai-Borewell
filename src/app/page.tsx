@@ -17,7 +17,7 @@ const Quality = dynamic(() => import("@/components/Quality/Quality"), { ssr: fal
 const Contact = dynamic(() => import("@/components/Contact/Contact"), { ssr: false });
 const Footer = dynamic(() => import("@/components/UI/Footer"), { ssr: false });
 
-// 3D Scene — loaded immediately so models download during the splash screen
+// 3D Scene — always mounted immediately so models download during splash
 const BorewellScene = dynamic(() => import("@/components/Scene/BorewellScene"), {
   ssr: false,
   loading: () => null,
@@ -25,6 +25,7 @@ const BorewellScene = dynamic(() => import("@/components/Scene/BorewellScene"), 
 
 export default function Home() {
   const { isSplashVisible } = useSplash();
+  const splashDone = !isSplashVisible;
 
   return (
     <main>
@@ -32,16 +33,12 @@ export default function Home() {
       <Hero />
 
       {/*
-             * BorewellScene is ALWAYS mounted so WebGL context & GLB files
-             * are initialized during the 3-second splash.
-             * - During splash: hidden (visibility:hidden keeps it off-screen but active)
-             * - After splash: visible. The scene itself fades in via opacity transition
-             *   only once Three.js signals models are on the GPU (SceneReadyNotifier).
-             * This completely eliminates any visible "pop" or delay.
+             * BorewellScene is always mounted — no visibility:hidden wrapper.
+             * It controls its own opacity via the splashDone + modelsReady flags.
+             * This avoids the repaint-flash that visibility:hidden caused.
+             * Models are downloading in the background during the 3s splash.
              */}
-      <div style={{ visibility: isSplashVisible ? 'hidden' : 'visible' }}>
-        <BorewellScene />
-      </div>
+      <BorewellScene splashDone={splashDone} />
 
       <div style={{ position: 'relative', zIndex: 10 }}>
         <About />
