@@ -1,0 +1,81 @@
+.servicesSection {
+    padding: 8rem 2rem;
+    background: linear-gradient(180deg, var(--c-earth-dark) 0%, var(--c-earth-mid) 100%);
+    position: relative;
+}
+
+.headingWrapper {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    color: var(--c-text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    position: relative;
+    background: rgba(0, 77, 102, 0.3);
+    /* Teal tint */
+    border: 1px solid rgba(132, 255, 255, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(5px);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    background: rgba(0, 77, 102, 0.5);
+    border-color: var(--c-water-light);
+    box-shadow: 0 10px 30px rgba(0, 136, 204, 0.2);
+}
+
+.iconWrapper {
+    height: 200px;
+    background: radial-gradient(circle at 50% 50%, rgba(38, 198, 218, 0.1), transparent 70%);
+}
+
+.content {
+    padding: 2rem;
+}
+
+.cardTitle {
+    font-size: 1.5rem;
+    color: var(--c-text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.cardDescription {
+    color: var(--c-text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.cardLink {
+    display: inline-block;
+    margin-top: 1.5rem;
+    color: var(--c-water-light);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.cardLink:hover {
+    color: var(--c-water-glow);
+}

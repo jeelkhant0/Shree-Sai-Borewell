@@ -1,0 +1,20 @@
+0 verbose cli /usr/local/bin/node /usr/local/lib/node_modules/npm/bin/npm-cli.js
+1 info using npm@11.6.2
+2 info using node@v24.11.1
+3 silly config load:file:/usr/local/lib/node_modules/npm/npmrc
+4 silly config load:file:/Users/tejaspatel/Shree Sai Borewell/.npmrc
+5 silly config load:file:/Users/tejaspatel/.npmrc
+6 silly config load:file:/usr/local/etc/npmrc
+7 verbose title npm exec @gltf-transform/cli optimize public/3d/industrial_pipes_pack.glb public/3d_opt/industrial_pipes_pack.glb --texture-compress webp --texture-size 1024
+8 verbose argv "exec" "--yes" "--" "@gltf-transform/cli" "optimize" "public/3d/industrial_pipes_pack.glb" "public/3d_opt/industrial_pipes_pack.glb" "--texture-compress" "webp" "--texture-size" "1024"
+9 verbose logfile logs-max:10 dir:/Users/tejaspatel/Shree Sai Borewell/npm-cache/_logs/2026-02-16T11_16_37_760Z-
+10 verbose logfile /Users/tejaspatel/Shree Sai Borewell/npm-cache/_logs/2026-02-16T11_16_37_760Z-debug-0.log
+11 silly logfile start cleaning logs, removing 1 files
+12 silly logfile done cleaning log files
+13 silly packumentCache heap:4496293888 maxSize:1124073472 maxEntrySize:562036736
+14 verbose cwd /Users/tejaspatel/Shree Sai Borewell
+15 verbose os Darwin 25.3.0
+16 verbose node v24.11.1
+17 verbose npm  v11.6.2
+18 verbose exit 0
+19 info ok

@@ -1,0 +1,136 @@
+.section {
+    padding: clamp(4rem, 10vw, 8rem) 2rem;
+    background: linear-gradient(180deg, var(--c-earth-mid) 0%, var(--c-earth-dark) 100%);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.title {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.subtitle {
+    color: var(--c-text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.featuresGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.featureCard {
+    background: rgba(0, 30, 43, 0.4);
+    padding: 2.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(132, 255, 255, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.featureCard:hover {
+    background: rgba(0, 30, 43, 0.7);
+    border-color: var(--c-water-primary);
+    transform: translateY(-5px);
+}
+
+.featureCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--c-water-deep);
+    transition: background 0.3s;
+}
+
+.featureCard:hover::before {
+    background: var(--c-water-glow);
+}
+
+.titleWrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(38, 198, 218, 0.1);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--c-water-light);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.featureTitle {
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+.featureDesc {
+    color: var(--c-text-secondary);
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 4rem 1.5rem;
+    }
+
+    .header {
+        margin-bottom: 3rem;
+    }
+
+    .title {
+        font-size: 2.25rem;
+    }
+
+    .featureCard {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .section {
+        padding: 3rem 1rem;
+    }
+
+    .title {
+        font-size: 1.9rem;
+    }
+
+    .header {
+        margin-bottom: 2rem;
+    }
+
+    .featuresGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .featureCard {
+        padding: 1.2rem;
+    }
+
+    .featureTitle {
+        font-size: 1.1rem;
+    }
+}

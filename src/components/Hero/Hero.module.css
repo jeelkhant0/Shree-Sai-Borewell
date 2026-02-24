@@ -1,0 +1,283 @@
+.heroContainer {
+    position: relative;
+    width: 100%;
+    height: 100dvh;
+    /* Dynamic viewport height for mobile browsers */
+    min-height: 600px;
+    /* Prevent collapse on landscape mobile */
+    overflow: hidden;
+    background: transparent;
+    /* Rely on global body gradient */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6rem 4rem 0;
+    /* Sea glow */
+    background: radial-gradient(circle at 80% 60%, rgba(38, 198, 218, 0.1) 0%, transparent 60%);
+}
+
+.content {
+    pointer-events: auto;
+    max-width: 700px;
+}
+
+.tagline {
+    color: var(--c-water-glow);
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    background: rgba(0, 77, 102, 0.4);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    border: 1px solid rgba(132, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 15px rgba(38, 198, 218, 0.2);
+}
+
+.headline {
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.subheadline {
+    font-size: clamp(0.95rem, 2.5vw, 1.25rem);
+    color: var(--c-text-secondary);
+    line-height: 1.6;
+    margin-bottom: 3rem;
+    max-width: 600px;
+}
+
+.buttonGroup {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.primaryBtn {
+    background: linear-gradient(135deg, var(--c-gold) 0%, var(--c-orange-glow) 100%);
+    color: #fff;
+    border: none;
+    padding: 1.2rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 0 25px rgba(255, 109, 0, 0.4);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.primaryBtn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 40px rgba(255, 109, 0, 0.6);
+}
+
+.secondaryBtn {
+    background: transparent;
+    color: var(--c-text-primary);
+    border: 1px solid rgba(132, 255, 255, 0.3);
+    padding: 1.2rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.secondaryBtn:hover {
+    border-color: var(--c-water-glow);
+    background: rgba(38, 198, 218, 0.15);
+    color: var(--c-water-glow);
+    box-shadow: 0 0 20px rgba(38, 198, 218, 0.25);
+}
+
+.scrollIndicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--c-text-secondary);
+    font-size: 0.8rem;
+    gap: 0.8rem;
+    letter-spacing: 0.1em;
+}
+
+.mouse {
+    width: 24px;
+    height: 40px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    position: relative;
+}
+
+.wheel {
+    width: 4px;
+    height: 6px;
+    background: var(--c-water-light);
+    border-radius: 2px;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scrollWheel 2s infinite;
+}
+
+@keyframes scrollWheel {
+    0% {
+        top: 8px;
+        opacity: 1;
+    }
+
+    100% {
+        top: 22px;
+        opacity: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .headline {
+        font-size: clamp(1.8rem, 9vw, 3rem);
+        word-break: break-word;
+    }
+
+    .subheadline {
+        font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+        margin-bottom: 2rem;
+    }
+
+    .overlay {
+        padding: 0 1.2rem;
+        justify-content: flex-start;
+        padding-top: 18vh;
+    }
+
+    .buttonGroup {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .primaryBtn,
+    .secondaryBtn {
+        width: 100%;
+        padding: 0.9rem 1rem;
+        font-size: 0.95rem;
+        text-align: center;
+    }
+
+    .tagline {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .heroContainer {
+        min-height: 100dvh;
+    }
+
+    .overlay {
+        padding: 0 1rem;
+        padding-top: 16vh;
+    }
+
+    .headline {
+        font-size: clamp(1.6rem, 8vw, 2.2rem);
+        line-height: 1.2;
+        margin-bottom: 1rem;
+    }
+
+    .subheadline {
+        font-size: 0.875rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.5;
+    }
+
+    .scrollIndicator {
+        display: none;
+        /* Save space on very small phones */
+    }
+}
+
+/* Drilling Story HUD */
+.hudContainer {
+    position: absolute;
+    bottom: 8rem;
+    right: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    color: var(--c-water-glow);
+    font-family: monospace;
+    text-transform: uppercase;
+    pointer-events: none;
+    z-index: 15;
+}
+
+.hudLine {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+}
+
+.hudValue {
+    font-weight: 700;
+    color: #fff;
+    min-width: 80px;
+}
+
+.hudLabel {
+    opacity: 0.7;
+    min-width: 120px;
+}
+
+.progressBar {
+    width: 200px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.progressFill {
+    height: 100%;
+    background: var(--c-water-glow);
+    box-shadow: 0 0 10px var(--c-water-glow);
+}
+
+@media (max-width: 900px) {
+    .hudContainer {
+        right: 2rem;
+        bottom: 12rem;
+        scale: 0.8;
+    }
+}
+
+@media (max-width: 600px) {
+    .hudContainer {
+        display: none;
+        /* Hide on very small screens to keep content clear */
+    }
+}

@@ -1,0 +1,29 @@
+.section {
+    padding: clamp(4rem, 10vw, 6rem) 2rem;
+    background: var(--c-earth-mid);
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.card {
+    border: 1px solid var(--c-water-primary);
+    padding: clamp(1.5rem, 5vw, 3.5rem);
+    border-radius: 20px;
+    background: rgba(0, 136, 204, 0.1);
+}
+
+.title {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    margin-bottom: 1.5rem;
+    color: #fff;
+}
+
+.text {
+    color: var(--c-text-secondary);
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
+    line-height: 1.8;
+}

@@ -1,0 +1,79 @@
+.footer {
+    background: #001520;
+    /* Very deep teal/black */
+    padding: 5rem 2rem 2rem;
+    border-top: 1px solid rgba(38, 198, 218, 0.1);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 4rem;
+}
+
+.logoCol h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.logoCol span {
+    color: var(--c-water-light);
+}
+
+.tagline {
+    color: var(--c-text-secondary);
+    line-height: 1.6;
+    max-width: 300px;
+}
+
+.col h3 {
+    font-size: 1.1rem;
+    color: var(--c-text-primary);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.linksList {
+    list-style: none;
+    padding: 0;
+}
+
+.linksList li {
+    margin-bottom: 0.8rem;
+}
+
+.linksList a {
+    color: var(--c-text-secondary);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.linksList a:hover {
+    color: var(--c-water-glow);
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--c-text-secondary);
+    font-size: 0.9rem;
+}
+
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+}

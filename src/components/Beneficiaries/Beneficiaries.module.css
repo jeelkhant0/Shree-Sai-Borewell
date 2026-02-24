@@ -1,0 +1,74 @@
+.section {
+    padding: clamp(4rem, 10vw, 8rem) 2rem;
+    background: linear-gradient(180deg, var(--c-earth-dark) 0%, var(--c-earth-mid) 100%);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 3rem;
+    color: #fff;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+}
+
+.card {
+    background: rgba(38, 198, 218, 0.05);
+    padding: 2.5rem;
+    border-radius: 16px;
+    border: 1px solid rgba(132, 255, 255, 0.1);
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    background: rgba(38, 198, 218, 0.1);
+}
+
+.cardTitle {
+    font-size: clamp(1.2rem, 3vw, 1.4rem);
+    margin-bottom: 1rem;
+    color: var(--c-water-light);
+}
+
+.cardDesc {
+    color: var(--c-text-secondary);
+    line-height: 1.6;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 3rem 1.2rem;
+    }
+
+    .title {
+        font-size: clamp(1.7rem, 7vw, 2.5rem);
+        margin-bottom: 2rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    .card {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        padding: 1.2rem;
+    }
+}
