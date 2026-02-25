@@ -1,43 +1,37 @@
 "use client";
 
-import React, { useState, useEffect, useCallback } from "react";
+import React from "react";
 import styles from "./Hero.module.css";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import dynamic from "next/dynamic";
 
-const STATUSES = ["POSITIONING", "DRILLING", "EXTRACTING", "COMPLETE"];
+// Dynamically load the 3D canvas — SSR must be off for Three.js
+const HeroTruck3D = dynamic(() => import("./HeroTruck3D"), {
+    ssr: false,
+    loading: () => null,
+});
 
 const Hero = () => {
-    const [statusIndex, setStatusIndex] = useState(0);
-    const [depth, setDepth] = useState(0);
-
-    useEffect(() => {
-        // Use requestAnimationFrame instead of setInterval(100ms) — far more efficient
-        // Only update every ~1600ms for status (not every 100ms)
-        const statusTimer = setInterval(() => {
-            setStatusIndex(i => (i + 1) % STATUSES.length);
-        }, 5000);
-
-        // Depth only needs to update every 500ms — visual bar, not real-time critical
-        const depthTimer = setInterval(() => {
-            const time = Date.now() / 1000;
-            const cycle = 20;
-            const progress = (time % cycle) / cycle;
-            setDepth(Math.round(progress * 350)); // pre-round to avoid re-renders from float precision
-        }, 500);
-
-        return () => {
-            clearInterval(statusTimer);
-            clearInterval(depthTimer);
-        };
-    }, []);
-
-    const scrollToContact = useCallback(() => {
+    const scrollToContact = () => {
         document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-    }, []);
+    };
 
     return (
         <section className={styles.heroContainer}>
+            {/* Right-side 3D truck — same position as the old static image */}
+            <motion.div
+                className={styles.heroImages}
+                initial={{ opacity: 0, x: 60 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1, delay: 0.4 }}
+            >
+                {/* The canvas fills the heroImages container exactly */}
+                <div className={styles.heroImgWrap}>
+                    <HeroTruck3D />
+                </div>
+            </motion.div>
+
             <div className={styles.overlay}>
                 <motion.div
                     className={styles.content}
@@ -67,30 +61,6 @@ const Hero = () => {
                         </Link>
                     </div>
                 </motion.div>
-
-                {/* Drilling Story HUD */}
-                <div className={styles.hudContainer}>
-                    <div className={styles.hudLine}>
-                        <span className={styles.hudLabel}>OPERATIONAL STATUS</span>
-                        <span className={styles.hudValue}>{STATUSES[statusIndex]}</span>
-                    </div>
-
-                    <div className={styles.hudLine}>
-                        <span className={styles.hudLabel}>DRILLING DEPTH</span>
-                        <div className={styles.progressBar}>
-                            <div
-                                className={styles.progressFill}
-                                style={{ width: `${(depth / 350) * 100}%` }}
-                            />
-                        </div>
-                        <span className={styles.hudValue}>{depth} FT</span>
-                    </div>
-
-                    <div className={styles.hudLine}>
-                        <span className={styles.hudLabel}>SIGNAL QUALITY</span>
-                        <span className={styles.hudValue} style={{ color: '#00ff00' }}>OPTIMAL</span>
-                    </div>
-                </div>
             </div>
 
             <div className={styles.scrollIndicator}>

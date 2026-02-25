@@ -12,27 +12,16 @@ import { ArrowRight } from "lucide-react";
 const PVCModel = dynamic(() => import('@/components/Scene/PVCModel'), { ssr: false });
 const PumpModel = dynamic(() => import('@/components/Scene/PumpModel'), { ssr: false });
 const FiltModel = dynamic(() => import('@/components/Scene/FiltModel'), { ssr: false });
-const WaterText = dynamic(() => import('@/components/Scene/WaterText'), { ssr: false });
 import ProductCard from '@/components/Products/ProductCard';
 const OpenWellSectionModel = dynamic(() => import('@/components/Scene/OpenWellSectionModel'), { ssr: false });
-const PumpModel05 = dynamic(() => import('@/components/Scene/PumpModel05'), { ssr: false });
-const PumpModel10OpenWell = dynamic(() => import('@/components/Scene/PumpModel10OpenWell'), { ssr: false });
-const PumpModel10 = dynamic(() => import('@/components/Scene/PumpModel10'), { ssr: false });
-const PumpModel15 = dynamic(() => import('@/components/Scene/PumpModel15'), { ssr: false });
-const PumpModel20 = dynamic(() => import('@/components/Scene/PumpModel20'), { ssr: false });
-const PumpModel05OpenWell = dynamic(() => import('@/components/Scene/PumpModel05OpenWell'), { ssr: false });
 
 export default function ProductsPage() {
     return (
         <main style={{ background: 'linear-gradient(180deg, var(--c-earth-dark) 0%, var(--c-earth-mid) 100%)', minHeight: '100vh', color: '#fff' }}>
             <Navbar />
 
-            <div style={{ paddingTop: '8rem' }}>
-                <WaterText />
-            </div>
-
             {/* Header */}
-            <section style={{ padding: '2rem 2rem 4rem', textAlign: 'center' }}>
+            <section style={{ padding: '8rem 2rem 4rem', textAlign: 'center' }}>
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -77,7 +66,7 @@ export default function ProductsPage() {
                             overflow: 'hidden'
                         }}
                     >
-                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', alignItems: 'center' }}>
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', alignItems: 'center' }}>
                             <div style={{ padding: '2.5rem' }}>
                                 <h3 style={{ fontSize: '2rem', marginBottom: '1rem', color: 'var(--c-water-light)' }}>PVC Casing Pipes</h3>
                                 <p style={{ marginBottom: '1.5rem', color: 'var(--c-text-secondary)' }}>
@@ -123,7 +112,7 @@ export default function ProductsPage() {
                             </div>
 
                             {/* 3D Model Container */}
-                            <div style={{ height: '400px', width: '100%', position: 'relative', background: 'transparent', borderRadius: '0 12px 12px 0' }}>
+                            <div style={{ height: '400px', maxHeight: '300px', width: '100%', position: 'relative', background: 'transparent', overflow: 'hidden', borderRadius: '0 12px 12px 0' }}>
                                 <Suspense fallback={<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%', color: 'var(--c-text-secondary)' }}>Loading 3D View...</div>}>
                                     <PVCModel />
                                 </Suspense>
@@ -193,7 +182,7 @@ export default function ProductsPage() {
                             </div>
 
                             {/* 3D Model Container for Pump */}
-                            <div style={{ height: '400px', width: '100%', position: 'relative', background: 'transparent', borderRadius: '0 12px 12px 0' }}>
+                            <div style={{ height: '400px', maxHeight: '300px', width: '100%', position: 'relative', background: 'transparent', overflow: 'hidden', borderRadius: '0 12px 12px 0' }}>
                                 <Suspense fallback={<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%', color: 'var(--c-text-secondary)' }}>Loading 3D View...</div>}>
                                     <PumpModel />
                                 </Suspense>
@@ -230,7 +219,7 @@ export default function ProductsPage() {
                                     ]}
                                     features={['Domestic Use', 'Power Saving', 'Copper Winding']}
                                     delay={0.1}
-                                    Model={PumpModel05}
+                                    image="/pumps/pump-05hp.jpg"
                                     footerText="Varuna, Kevilex, Lubi, C.R.I., Pluga, and all other companies are available."
                                 />
                                 <ProductCard
@@ -243,7 +232,7 @@ export default function ProductsPage() {
                                     features={['High Head', 'Thermal Protection', 'Stainless Steel Body']}
                                     popular={true}
                                     delay={0.2}
-                                    Model={PumpModel10}
+                                    image="/pumps/pump-1hp.jpg"
                                     footerText="Varuna, Kevilex, Lubi, C.R.I., Pluga, and all other companies are available."
                                 />
                                 <ProductCard
@@ -255,7 +244,7 @@ export default function ProductsPage() {
                                     ]}
                                     features={['Heavy Duty', 'Agricultural Use', 'High Discharge']}
                                     delay={0.3}
-                                    Model={PumpModel15}
+                                    image="/pumps/pump-15hp.jpg"
                                     footerText="Varuna, Kevilex, Lubi, C.R.I., Pluga, and all other companies are available."
                                 />
                                 <ProductCard
@@ -267,7 +256,7 @@ export default function ProductsPage() {
                                     ]}
                                     features={['Industrial Grade', 'Max Efficiency', 'Durable Construction']}
                                     delay={0.4}
-                                    Model={PumpModel20}
+                                    image="/pumps/pump-2hp.jpg"
                                     footerText="Varuna, Kevilex, Lubi, C.R.I., Pluga, and all other companies are available."
                                 />
                             </div>
@@ -328,7 +317,7 @@ export default function ProductsPage() {
                             </div>
 
                             {/* 3D Model Container for Pump */}
-                            <div style={{ height: '400px', width: '100%', position: 'relative', background: 'transparent', borderRadius: '0 12px 12px 0' }}>
+                            <div style={{ height: '400px', maxHeight: '300px', width: '100%', position: 'relative', background: 'transparent', overflow: 'hidden', borderRadius: '0 12px 12px 0' }}>
                                 <Suspense fallback={<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%', color: 'var(--c-text-secondary)' }}>Loading 3D View...</div>}>
                                     <OpenWellSectionModel />
                                 </Suspense>
@@ -365,7 +354,7 @@ export default function ProductsPage() {
                                     ]}
                                     features={['Copper Winding', 'With Control Panel', 'Easy Maintenance']}
                                     delay={0.1}
-                                    Model={PumpModel05OpenWell}
+                                    image="/pumps/openwell-05hp.jpg"
                                     footerText="Varuna, Kevilex, Lubi, C.R.I., Pluga, and all other companies are available."
                                 />
                                 <ProductCard
@@ -378,7 +367,7 @@ export default function ProductsPage() {
                                     features={['High Discharge', 'With Control Panel', 'Long Life']}
                                     popular={true}
                                     delay={0.2}
-                                    Model={PumpModel10OpenWell}
+                                    image="/pumps/openwell-1hp.jpg"
                                     footerText="Varuna, Kevilex, Lubi, C.R.I., Pluga, and all other companies are available."
                                 />
                             </div>
@@ -395,10 +384,7 @@ export default function ProductsPage() {
                             gridColumn: '1 / -1',
                             background: 'rgba(255, 255, 255, 0.02)',
                             borderRadius: '12px',
-                            borderLeft: '4px solid var(--c-water-deep)',
-                            // Adding full border too for consistency if desired, or keep accent left border
-                            border: '1px solid rgba(132, 255, 255, 0.1)',
-                            borderLeftWidth: '4px',
+                            border: '1px solid rgba(132, 255, 255, 0.15)',
                             overflow: 'hidden'
                         }}
                     >
@@ -436,7 +422,7 @@ export default function ProductsPage() {
                             </div>
 
                             {/* 3D Model Container for Filt */}
-                            <div style={{ height: '400px', width: '100%', position: 'relative', background: 'transparent', borderRadius: '0 12px 12px 0' }}>
+                            <div style={{ height: '400px', maxHeight: '300px', width: '100%', position: 'relative', background: 'transparent', overflow: 'hidden', borderRadius: '0 12px 12px 0' }}>
                                 <Suspense fallback={<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%', color: 'var(--c-text-secondary)' }}>Loading 3D View...</div>}>
                                     <FiltModel />
                                 </Suspense>

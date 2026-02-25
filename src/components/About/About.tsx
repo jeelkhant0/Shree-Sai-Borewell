@@ -60,7 +60,7 @@ const About = () => {
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8 }}
                     viewport={{ once: true }}
-                    style={{ background: 'none', border: 'none', boxShadow: 'none' }}
+                    style={{ background: 'none', border: 'none', boxShadow: 'none', marginTop: '-3rem' }}
                 >
                     <About3DSlideshow />
                 </motion.div>

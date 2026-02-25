@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Inter } from "next/font/google"; // Changed font
+import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import "./globals.css";
 import WaterBackground from "@/components/UI/WaterBackground";
 import { SplashProvider } from "@/context/SplashContext";
@@ -189,9 +189,6 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Preload 3D models so they are ready when BorewellScene mounts */}
-        <link rel="preload" href="/trkman.glb" as="fetch" crossOrigin="anonymous" />
-        <link rel="preload" href="/dig.glb" as="fetch" crossOrigin="anonymous" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

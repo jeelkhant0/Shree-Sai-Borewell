@@ -2,28 +2,94 @@
     position: relative;
     width: 100%;
     height: 100dvh;
-    /* Dynamic viewport height for mobile browsers */
     min-height: 600px;
-    /* Prevent collapse on landscape mobile */
     overflow: hidden;
     background: transparent;
-    /* Rely on global body gradient */
 }
+
+/* Static hero image — occupies the right blank area */
+.heroImages {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 55%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    /* Push down so tall tower clears the navbar (≈70px height) */
+    padding-top: 80px;
+    z-index: 2;
+    /* Blend left edge smoothly into background */
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 20%, black 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 20%, black 100%);
+}
+
+/* Single truck image — sits at bottom, tower has room above */
+.heroImgWrap {
+    position: relative;
+    width: 100%;
+    height: 87%;
+    flex-shrink: 0;
+    filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.7));
+}
+
+@media (max-width: 1024px) {
+    .heroImages {
+        width: 50%;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .heroImages {
+        width: 100%;
+        height: 40%;
+        top: auto;
+        bottom: 5rem;
+        opacity: 0.3;
+        padding: 0 1rem;
+        -webkit-mask-image: linear-gradient(to top, black 30%, transparent 100%);
+        mask-image: linear-gradient(to top, black 30%, transparent 100%);
+    }
+
+    .heroImgWrap {
+        height: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .heroImages {
+        width: 100%;
+        height: 55%;
+        top: auto;
+        bottom: 0;
+        opacity: 0.25;
+        padding: 0;
+        -webkit-mask-image: linear-gradient(to top, black 20%, transparent 100%);
+        mask-image: linear-gradient(to top, black 20%, transparent 100%);
+    }
+
+    .heroImgWrap {
+        height: 100%;
+    }
+}
+
 
 .overlay {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    /* Only take up the left half — right half is for images */
+    width: 50%;
     height: 100%;
     z-index: 10;
     pointer-events: none;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 6rem 4rem 0;
-    /* Sea glow */
-    background: radial-gradient(circle at 80% 60%, rgba(38, 198, 218, 0.1) 0%, transparent 60%);
+    padding: 6rem 2rem 0 4rem;
+    background: radial-gradient(circle at 30% 60%, rgba(38, 198, 218, 0.08) 0%, transparent 60%);
 }
 
 .content {
@@ -166,6 +232,8 @@
     }
 
     .overlay {
+        /* Full width on mobile since images are hidden/faded */
+        width: 100%;
         padding: 0 1.2rem;
         justify-content: flex-start;
         padding-top: 18vh;
@@ -219,19 +287,24 @@
     }
 }
 
-/* Drilling Story HUD */
+/* Drilling Story HUD — bottom-right corner, over the truck image */
 .hudContainer {
     position: absolute;
-    bottom: 8rem;
-    right: 4rem;
+    bottom: 2rem;
+    right: 2.5rem;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.6rem;
     color: var(--c-water-glow);
     font-family: monospace;
     text-transform: uppercase;
     pointer-events: none;
     z-index: 15;
+    background: rgba(0, 20, 30, 0.5);
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+    border: 1px solid rgba(38, 198, 218, 0.15);
+    backdrop-filter: blur(6px);
 }
 
 .hudLine {
