@@ -38,7 +38,7 @@ export default function ProductsPage() {
 
             {/* Intro */}
             <section style={{ padding: '4rem 2rem', maxWidth: '1000px', margin: '0 auto' }}>
-                <div style={{ background: 'rgba(38, 198, 218, 0.05)', borderRadius: '16px', padding: '3rem', border: '1px solid rgba(132, 255, 255, 0.1)' }}>
+                <div style={{ background: 'rgba(15, 35, 55, 0.5)', borderRadius: '16px', padding: '3rem', border: '1px solid rgba(74, 157, 199, 0.12)' }}>
                     <h2 style={{ fontSize: '2rem', marginBottom: '1.5rem', color: '#fff' }}>Long-Lasting Borewells Start Here</h2>
                     <p style={{ lineHeight: '1.8', color: 'var(--c-text-secondary)', marginBottom: '1rem' }}>
                         A borewell is not just about drilling depth; its long-term success depends greatly on the quality of materials used inside it. At Shree Sai Borewell Drilling, Vadodara, we believe that strong internal construction ensures better water flow, prevents collapse, and extends the life of the borewell.
@@ -384,7 +384,7 @@ export default function ProductsPage() {
                             gridColumn: '1 / -1',
                             background: 'rgba(255, 255, 255, 0.02)',
                             borderRadius: '12px',
-                            border: '1px solid rgba(132, 255, 255, 0.15)',
+                            border: '1px solid rgba(74, 157, 199, 0.15)',
                             overflow: 'hidden'
                         }}
                     >

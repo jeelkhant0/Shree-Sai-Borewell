@@ -70,7 +70,7 @@ const Navbar = () => {
                     <Link href="/" className={styles.logo} onClick={closeMenu}>
                         <div className={styles.logoIconWrapper}>
                             <Image
-                                src="/logossb.webp"
+                                src="/SHREE_SAI_BOREWELL_FINAL_LOGO.png"
                                 alt="Shree Sai Borewell"
                                 width={50}
                                 height={50}
@@ -120,3 +120,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

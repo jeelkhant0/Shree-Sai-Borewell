@@ -13,7 +13,7 @@
     border: 1px solid var(--c-water-primary);
     padding: clamp(1.5rem, 5vw, 3.5rem);
     border-radius: 20px;
-    background: rgba(0, 136, 204, 0.1);
+    background: rgba(26, 74, 110, 0.15);
 }
 
 .title {

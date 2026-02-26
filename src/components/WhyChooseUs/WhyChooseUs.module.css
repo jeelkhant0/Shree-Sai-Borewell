@@ -34,7 +34,7 @@
     background: rgba(0, 30, 43, 0.4);
     padding: 2.5rem;
     border-radius: 12px;
-    border: 1px solid rgba(132, 255, 255, 0.05);
+    border: 1px solid rgba(74, 157, 199, 0.06);
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
@@ -71,7 +71,7 @@
 .icon {
     width: 40px;
     height: 40px;
-    background: rgba(38, 198, 218, 0.1);
+    background: rgba(30, 111, 168, 0.1);
     border-radius: 8px;
     display: flex;
     align-items: center;

@@ -59,10 +59,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ title, price, features, specs
                 <div style={{
                     position: 'relative',
                     width: '100%',
-                    height: '250px',
+                    height: '280px',
                     marginBottom: '1.5rem',
                     borderRadius: '8px',
-                    overflow: 'hidden',
                     background: 'transparent'
                 }}>
                     <React.Suspense fallback={<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%', color: 'var(--c-text-secondary)' }}>Loading 3D...</div>}>
@@ -85,7 +84,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ title, price, features, specs
                         src={image}
                         alt={title}
                         fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         style={{ objectFit: 'contain', padding: '1rem' }}
+                        onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
                     />
                 </div>
             )}

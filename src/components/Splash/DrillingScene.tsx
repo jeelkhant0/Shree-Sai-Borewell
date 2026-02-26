@@ -22,7 +22,7 @@ export function DrillingScene() {
     const logoGroupRef = useRef<THREE.Group>(null);
     const logoMeshRef = useRef<THREE.Mesh>(null);
 
-    const logoTexture = useTexture("/shreesailogo.webp");
+    const logoTexture = useTexture("/SHREE_SAI_BOREWELL_FINAL_LOGO.png");
 
     // Configure texture for maximum quality
     useEffect(() => {
@@ -229,3 +229,4 @@ export function DrillingScene() {
         </group>
     );
 }
+

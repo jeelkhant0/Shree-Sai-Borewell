@@ -1,21 +1,11 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Inter } from "next/font/google";
+
 import "./globals.css";
 import WaterBackground from "@/components/UI/WaterBackground";
 import { SplashProvider } from "@/context/SplashContext";
 import SplashWrapper from "@/components/Splash/SplashWrapper";
 
-const jakarta = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  variable: "--font-jakarta",
-  display: "swap",
-});
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "Shree Sai Borewell | Best Borewell Drilling & Pump Services in Vadodara",
@@ -26,12 +16,12 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   icons: {
-    icon: "/brand-icon.webp",
-    shortcut: "/brand-icon.webp",
-    apple: "/brand-icon.webp",
+    icon: "/SHREE_SAI_BOREWELL_FINAL_LOGO.png",
+    shortcut: "/SHREE_SAI_BOREWELL_FINAL_LOGO.png",
+    apple: "/SHREE_SAI_BOREWELL_FINAL_LOGO.png",
     other: {
       rel: "apple-touch-icon-precomposed",
-      url: "/brand-icon.webp",
+      url: "/SHREE_SAI_BOREWELL_FINAL_LOGO.png",
     },
   },
   openGraph: {
@@ -41,7 +31,7 @@ export const metadata: Metadata = {
     siteName: "Shree Sai Borewell",
     images: [
       {
-        url: "/photo-output.webp",
+        url: "/SHREE_SAI_BOREWELL_FINAL_LOGO.png",
         width: 800,
         height: 600,
         alt: "Shree Sai Borewell Logo",
@@ -70,7 +60,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "Shree Sai Borewell",
-  "image": "/photo-output.webp",
+  "image": "/SHREE_SAI_BOREWELL_FINAL_LOGO.png",
   "telephone": "+91 9510187991",
   "email": "info.shreesaiborewell@gmail.com",
   "url": "https://shreesaiborewell.com",
@@ -195,7 +185,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${jakarta.variable} ${inter.variable} antialiased`}
+        className="antialiased"
         suppressHydrationWarning
       >
         <SplashProvider>
@@ -208,3 +198,4 @@ export default function RootLayout({
     </html>
   );
 }
+

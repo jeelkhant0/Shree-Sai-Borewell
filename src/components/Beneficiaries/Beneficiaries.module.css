@@ -22,17 +22,17 @@
 }
 
 .card {
-    background: rgba(38, 198, 218, 0.05);
+    background: rgba(22, 35, 51, 0.5);
     padding: 2.5rem;
     border-radius: 16px;
-    border: 1px solid rgba(132, 255, 255, 0.1);
+    border: 1px solid rgba(74, 157, 199, 0.1);
     text-align: left;
     transition: transform 0.3s ease;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    background: rgba(38, 198, 218, 0.1);
+    background: rgba(26, 74, 110, 0.2);
 }
 
 .cardTitle {

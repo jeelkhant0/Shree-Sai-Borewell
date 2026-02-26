@@ -9,8 +9,8 @@ export default function SplashScreen({ onFinish }: { onFinish: () => void }) {
     const [progress, setProgress] = useState(0);
 
     useEffect(() => {
-        // Reduce splash from 8s → 3s total
-        const SPLASH_DURATION = 3000;
+        // Reduce splash from 3s → 1.5s total
+        const SPLASH_DURATION = 1500;
         const start = Date.now();
 
         const progressInterval = setInterval(() => {
@@ -21,7 +21,7 @@ export default function SplashScreen({ onFinish }: { onFinish: () => void }) {
 
         const timer = setTimeout(() => {
             setIsFinishing(true);
-            setTimeout(onFinish, 600); // Shorter exit animation
+            setTimeout(onFinish, 300); // Shorter exit animation
         }, SPLASH_DURATION);
 
         return () => {
@@ -42,7 +42,7 @@ export default function SplashScreen({ onFinish }: { onFinish: () => void }) {
                         position: 'fixed',
                         top: 0, left: 0, right: 0, bottom: 0,
                         zIndex: 99999,
-                        background: 'radial-gradient(circle at 50% 0%, #001e2b 0%, #000000 100%)',
+                        background: 'linear-gradient(180deg, #0a1520 0%, #050c14 100%)',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
@@ -51,23 +51,11 @@ export default function SplashScreen({ onFinish }: { onFinish: () => void }) {
                         overflow: 'hidden',
                     }}
                 >
-                    {/* Subtle CSS-only animated background — no WebGL */}
+                    {/* Subtle static background — no animated glow blobs */}
                     <div style={{
-                        position: 'absolute', inset: 0, overflow: 'hidden', zIndex: 0, pointerEvents: 'none'
-                    }}>
-                        {[...Array(6)].map((_, i) => (
-                            <div key={i} style={{
-                                position: 'absolute',
-                                borderRadius: '50%',
-                                background: `radial-gradient(circle, rgba(38,198,218,${0.04 + i * 0.01}) 0%, transparent 70%)`,
-                                width: `${300 + i * 120}px`,
-                                height: `${300 + i * 120}px`,
-                                top: `${10 + i * 8}%`,
-                                left: `${15 + i * 10}%`,
-                                animation: `pulse-glow ${3 + i}s ease-in-out infinite alternate`,
-                            }} />
-                        ))}
-                    </div>
+                        position: 'absolute', inset: 0, overflow: 'hidden', zIndex: 0, pointerEvents: 'none',
+                        background: 'radial-gradient(ellipse at 50% 0%, rgba(30, 111, 168, 0.07) 0%, transparent 60%)'
+                    }} />
 
                     {/* Logo */}
                     <motion.div
@@ -78,14 +66,14 @@ export default function SplashScreen({ onFinish }: { onFinish: () => void }) {
                     >
                         <div style={{
                             width: 120, height: 120, borderRadius: '50%',
-                            border: '2px solid rgba(38,198,218,0.4)',
-                            boxShadow: '0 0 40px rgba(38,198,218,0.3), inset 0 0 20px rgba(38,198,218,0.05)',
+                            border: '2px solid rgba(30, 111, 168, 0.35)',
+                            boxShadow: '0 4px 24px rgba(0, 0, 0, 0.4)',
                             display: 'flex', alignItems: 'center', justifyContent: 'center',
                             background: 'rgba(0,30,43,0.8)',
                             backdropFilter: 'blur(10px)',
                         }}>
                             <Image
-                                src="/logossb.webp"
+                                src="/SHREE_SAI_BOREWELL_FINAL_LOGO.png"
                                 alt="Shree Sai Borewell"
                                 width={90}
                                 height={90}
@@ -105,17 +93,17 @@ export default function SplashScreen({ onFinish }: { onFinish: () => void }) {
                         <div style={{
                             fontSize: 'clamp(1.2rem, 4vw, 1.8rem)',
                             fontWeight: 700,
-                            letterSpacing: '0.25em',
-                            color: '#e0f7fa',
+                            letterSpacing: '0.15em',
+                            color: '#e8edf2',
                             textTransform: 'uppercase',
-                            textShadow: '0 0 20px rgba(38,198,218,0.5)',
+                            textShadow: '0 2px 8px rgba(0,0,0,0.4)',
                         }}>
                             Shree Sai Borewell
                         </div>
                         <div style={{
                             fontSize: '0.75rem',
                             letterSpacing: '0.3em',
-                            color: 'rgba(132, 255, 255, 0.6)',
+                            color: 'rgba(155, 170, 184, 0.7)',
                             marginTop: '0.4rem',
                             textTransform: 'uppercase',
                         }}>
@@ -139,16 +127,15 @@ export default function SplashScreen({ onFinish }: { onFinish: () => void }) {
                             <div style={{
                                 height: '100%',
                                 width: `${progress}%`,
-                                background: 'linear-gradient(90deg, #26c6da, #84ffff)',
+                                background: 'linear-gradient(90deg, #1e6fa8, #4a9dc7)',
                                 borderRadius: '2px',
                                 transition: 'width 0.05s linear',
-                                boxShadow: '0 0 8px rgba(38,198,218,0.8)',
                             }} />
                         </div>
                         <div style={{
                             fontSize: '0.65rem',
                             letterSpacing: '0.2em',
-                            color: 'rgba(132,255,255,0.5)',
+                            color: 'rgba(155, 170, 184, 0.6)',
                             textAlign: 'center',
                             marginTop: '0.5rem',
                             textTransform: 'uppercase',
@@ -157,14 +144,10 @@ export default function SplashScreen({ onFinish }: { onFinish: () => void }) {
                         </div>
                     </motion.div>
 
-                    <style>{`
-                        @keyframes pulse-glow {
-                            from { opacity: 0.3; transform: scale(1); }
-                            to { opacity: 0.7; transform: scale(1.05); }
-                        }
-                    `}</style>
+
                 </motion.div>
             )}
         </AnimatePresence>
     );
 }
+

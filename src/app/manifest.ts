@@ -12,20 +12,21 @@ export default function manifest(): MetadataRoute.Manifest {
         orientation: 'portrait',
         icons: [
             {
-                src: '/brand-icon.webp',   // Fixed: was .png, only .webp exists
+                src: '/SHREE_SAI_BOREWELL_FINAL_LOGO.png',
                 sizes: 'any',
-                type: 'image/webp',
+                type: 'image/png',
             },
             {
-                src: '/logossb.webp',
+                src: '/SHREE_SAI_BOREWELL_FINAL_LOGO.png',
                 sizes: '192x192',
-                type: 'image/webp',
+                type: 'image/png',
             },
             {
-                src: '/logossb.webp',
+                src: '/SHREE_SAI_BOREWELL_FINAL_LOGO.png',
                 sizes: '512x512',
-                type: 'image/webp',
+                type: 'image/png',
             },
         ],
     }
 }
+

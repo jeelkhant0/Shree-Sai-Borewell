@@ -1,8 +1,8 @@
 .footer {
-    background: #001520;
-    /* Very deep teal/black */
+    background: #050d17;
+    /* Very deep pure navy */
     padding: 5rem 2rem 2rem;
-    border-top: 1px solid rgba(38, 198, 218, 0.1);
+    border-top: 1px solid rgba(74, 157, 199, 0.1);
 }
 
 .container {

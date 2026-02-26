@@ -167,7 +167,7 @@ const Footer = () => {
                         }}
                     >
                         <Image
-                            src="/photo-output.webp"
+                            src="/tejaskp_logo.png"
                             alt="Tejaskp AI Software"
                             width={40}
                             height={40}
@@ -182,3 +182,4 @@ const Footer = () => {
 };
 
 export default Footer;
+

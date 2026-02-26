@@ -24,8 +24,8 @@ function Model(props: any) {
 
 export default function PumpModel() {
     return (
-        <div style={{ height: "400px", width: "100%", position: 'relative' }}>
-            <Canvas frameloop="always" dpr={[1, 2]} shadows camera={{ fov: 45, position: [0, 0, 10] }} gl={{ alpha: true, preserveDrawingBuffer: true }} style={{ position: 'absolute' }}>
+        <div style={{ height: "280px", width: "100%", position: 'relative' }}>
+            <Canvas frameloop="always" dpr={[1, 2]} shadows camera={{ fov: 45, position: [0, 0, 10] }} gl={{ alpha: true, preserveDrawingBuffer: true }} style={{ position: 'absolute', width: '100%', height: '100%', top: 0, left: 0 }}>
                 <PresentationControls speed={1.5} global zoom={0.7} polar={[-0.1, Math.PI / 4]}>
                     <Bounds fit clip observe margin={1.2}>
                         <Model />

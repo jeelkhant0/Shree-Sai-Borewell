@@ -28,7 +28,7 @@ export default function ServicesPage() {
 
             {/* Core Expertise Intro */}
             <section style={{ padding: '4rem 2rem', maxWidth: '1000px', margin: '0 auto' }}>
-                <div style={{ background: 'rgba(38, 198, 218, 0.05)', borderRadius: '16px', padding: '3rem', border: '1px solid rgba(132, 255, 255, 0.1)' }}>
+                <div style={{ background: 'rgba(15, 35, 55, 0.5)', borderRadius: '16px', padding: '3rem', border: '1px solid rgba(74, 157, 199, 0.12)' }}>
                     <h2 style={{ fontSize: '2rem', marginBottom: '1.5rem', color: '#fff' }}>Our Core Expertise</h2>
                     <p style={{ lineHeight: '1.8', color: 'var(--c-text-secondary)', marginBottom: '1rem' }}>
                         At Shree Sai Borewell Drilling, we focus exclusively on Direct Rotary (DR) drilling, a modern and highly efficient method known for accuracy, speed, and deep water access. By specializing in a single advanced drilling technique, we ensure better results, stronger bore structures, and consistent water yield for every type of project.

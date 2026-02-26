@@ -6,12 +6,12 @@ import { motion, AnimatePresence } from "framer-motion";
 const soilTypes = ["Top Soil", "Clay", "Sandstone", "Hard Rock", "Granite", "Aquifer Reach"];
 
 const COLORS = {
-    earthDark: "#001e2b",
-    earthMid: "#00334e",
-    waterLight: "#26c6da",
-    waterGlow: "#84ffff",
-    gold: "#ffab40",
-    goldShine: "#ffd180",
+    earthDark: "#0f1923",
+    earthMid: "#162333",
+    waterLight: "#4a9dc7",
+    waterGlow: "#7ab8d6",
+    gold: "#d4882a",
+    goldShine: "#e09e40",
 };
 
 export function SplashHUD() {
@@ -100,7 +100,7 @@ export function SplashHUD() {
                 .glass-panel {
                     background: rgba(0, 30, 43, 0.4);
                     backdrop-filter: blur(12px);
-                    border: 1px solid rgba(132, 255, 255, 0.1);
+                    border: 1px solid rgba(74, 157, 199, 0.1);
                     padding: 1.5rem;
                     border-radius: 8px;
                     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
@@ -118,7 +118,7 @@ export function SplashHUD() {
                 }
 
                 .status-box {
-                    border-left: 4px solid #26c6da;
+                    border-left: 4px solid #1e6fa8;
                 }
 
                 .torque-box {
@@ -133,9 +133,9 @@ export function SplashHUD() {
                     margin-bottom: 0.5rem;
                 }
 
-                .water-glow { color: #84ffff; }
-                .gold-text { color: #ffab40; }
-                .fading { color: rgba(255,255,255,0.5); }
+                .water-glow { color: #7ab8d6; }
+                .gold-text { color: #d4882a; }
+                .fading { color: rgba(255,255,255,0.45); }
 
                 .hud-value {
                     font-size: 1.25rem;
@@ -164,8 +164,8 @@ export function SplashHUD() {
                     left: 0;
                     width: 100%;
                     height: 1px;
-                    background: linear-gradient(90deg, transparent, #84ffff, transparent);
-                    opacity: 0.2;
+                    background: linear-gradient(90deg, transparent, #7ab8d6, transparent);
+                    opacity: 0.12;
                     transform: translateY(-50%);
                 }
 
@@ -196,7 +196,7 @@ export function SplashHUD() {
                 .depth-unit {
                     font-size: 1.5rem;
                     font-weight: bold;
-                    color: #84ffff;
+                    color: #7ab8d6;
                 }
 
                 .strata-box {
@@ -208,7 +208,7 @@ export function SplashHUD() {
                 .strata-value {
                     font-size: 1.5rem;
                     font-weight: bold;
-                    color: #ffab40;
+                    color: #d4882a;
                 }
 
                 @keyframes pulse {

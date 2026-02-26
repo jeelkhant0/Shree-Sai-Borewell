@@ -77,9 +77,9 @@
     height: 600px;
     border-radius: 20px;
     overflow: hidden;
-    background: radial-gradient(circle at 30% 30%, rgba(38, 198, 218, 0.1), transparent 60%),
+    background: radial-gradient(circle at 30% 30%, rgba(30, 111, 168, 0.08), transparent 60%),
         linear-gradient(135deg, var(--c-earth-mid) 0%, var(--c-earth-dark) 100%);
-    border: 1px solid rgba(132, 255, 255, 0.1);
+    border: 1px solid rgba(74, 157, 199, 0.1);
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
 }
 
@@ -89,8 +89,8 @@
     left: 0;
     width: 100%;
     height: 40%;
-    background: linear-gradient(0deg, rgba(0, 136, 204, 0.4) 0%, transparent 100%);
-    border-top: 1px solid rgba(132, 255, 255, 0.2);
+    background: linear-gradient(0deg, rgba(26, 74, 110, 0.35) 0%, transparent 100%);
+    border-top: 1px solid rgba(74, 157, 199, 0.15);
 }
 
 @media (max-width: 900px) {

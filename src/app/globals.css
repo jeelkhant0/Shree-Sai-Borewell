@@ -3,38 +3,30 @@
 @tailwind utilities;
 
 :root {
-  /* "Clean Sea" Palette */
-  --c-earth-dark: #001e2b;
-  /* Deep Sea Green/Blue (Dark Teal base) */
-  --c-earth-mid: #00334e;
-  /* Ocean Navy */
-  --c-earth-accent: #145374;
-  /* Steel Blue */
+  /* === SOBER PROFESSIONAL PALETTE === */
 
-  --c-water-deep: #004d66;
-  /* Deep Teal */
-  --c-water-primary: #0088cc;
-  /* Clear Water Blue */
-  --c-water-light: #26c6da;
-  /* Cyan / Aqua */
-  --c-water-glow: #84ffff;
-  /* Bright Cyan Glow */
+  /* Backgrounds — deep navy, not teal/sea */
+  --c-earth-dark: #0f1923;        /* Very dark navy */
+  --c-earth-mid:  #162333;        /* Dark navy */
+  --c-earth-accent: #1e3448;      /* Medium navy */
 
-  /* Accents - Coral/Orange for contrast against Sea colors */
-  --c-gold: #ffab40;
-  /* Soft Orange/Coral */
-  --c-gold-shine: #ffd180;
-  /* Pale Orange */
-  --c-orange-glow: #ff6d00;
-  /* Deep Orange */
+  /* Primary brand — calm steel blue (not neon) */
+  --c-water-deep:    #1a4a6e;     /* Deep steel blue */
+  --c-water-primary: #1e6fa8;     /* Professional blue */
+  --c-water-light:   #4a9dc7;     /* Muted sky blue */
+  --c-water-glow:    #7ab8d6;     /* Soft blue (no neon glow) */
 
-  --c-text-primary: #e0f7fa;
-  /* Ice White */
-  --c-text-secondary: #b2ebf2;
-  /* Light Cyan Grey */
+  /* Accent — muted warm orange (not firey) */
+  --c-gold:         #d4882a;      /* Warm amber */
+  --c-gold-shine:   #e09e40;      /* Light amber */
+  --c-orange-glow:  #c07020;      /* Deep amber */
 
-  --font-heading: var(--font-jakarta);
-  --font-body: var(--font-inter);
+  /* Text — off-white and grey (not cyan) */
+  --c-text-primary:   #e8edf2;    /* Off-white */
+  --c-text-secondary: #9baab8;    /* Cool grey */
+
+  --font-heading: 'Verdana', Verdana, Geneva, sans-serif;
+  --font-body:    'Verdana', Verdana, Geneva, sans-serif;
 }
 
 @layer base {
@@ -47,22 +39,21 @@
 
   html {
     scroll-behavior: smooth;
-    /* Prevent content from being wider than viewport on mobile */
     overflow-x: hidden;
+    /* Verdana reads ~10% larger — scale down base size */
+    font-size: 15px;
   }
 
   body {
     background-color: var(--c-earth-dark);
     color: var(--c-text-primary);
-    font-family: var(--font-body), sans-serif;
+    font-family: var(--font-body);
     overflow-x: hidden;
     margin: 0;
     padding: 0;
-    /* Removes 300ms tap delay on mobile, allows natural vertical scroll */
     touch-action: pan-y;
-    /* Clean Underwater Gradient */
+    /* Sober background — subtle gradient, no cyan glow */
     background-image:
-      radial-gradient(circle at 50% 0%, rgba(38, 198, 218, 0.15) 0%, transparent 60%),
       linear-gradient(180deg, var(--c-earth-dark) 0%, var(--c-earth-mid) 100%);
   }
 
@@ -81,29 +72,33 @@
   h4,
   h5,
   h6 {
-    font-family: var(--font-heading), sans-serif;
+    font-family: var(--font-heading);
     color: var(--c-text-primary);
     font-weight: 700;
-    /* Prevent heading overflow on small screens */
     overflow-wrap: break-word;
     word-break: break-word;
+    /* Verdana headings — tighter line height */
+    line-height: 1.25;
+  }
+
+  p {
+    line-height: 1.65;
   }
 }
 
-/* Scale down base font for tablets */
+/* Scale down for tablets */
 @media (max-width: 768px) {
-  html {
-    font-size: 15px;
-  }
-}
-
-/* Further scale down for phones */
-@media (max-width: 480px) {
   html {
     font-size: 14px;
   }
 }
 
+/* Scale down for phones */
+@media (max-width: 480px) {
+  html {
+    font-size: 13px;
+  }
+}
 
 /* Custom Utilities for 3D overlay */
 .canvas-container {
@@ -116,25 +111,24 @@
   pointer-events: none;
 }
 
-/* Sea Theme Gradients */
+/* Sober Gradient Text — amber instead of neon */
 .text-gradient-gold {
-  /* Changed to more of a "Sunlight on Water" gold/orange */
-  background: linear-gradient(135deg, var(--c-gold-shine) 0%, var(--c-gold) 50%, var(--c-orange-glow) 100%);
+  background: linear-gradient(135deg, var(--c-gold-shine) 0%, var(--c-gold) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .text-gradient-water {
-  background: linear-gradient(135deg, var(--c-water-glow) 0%, var(--c-water-light) 50%, var(--c-water-primary) 100%);
+  background: linear-gradient(135deg, var(--c-water-light) 0%, var(--c-water-primary) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* Scrollbar */
+/* Scrollbar — subtle */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -147,5 +141,5 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--c-water-light);
+  background: var(--c-water-primary);
 }

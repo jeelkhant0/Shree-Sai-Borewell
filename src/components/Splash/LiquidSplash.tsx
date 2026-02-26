@@ -77,7 +77,7 @@ import { Html } from "@react-three/drei";
 import { motion } from "framer-motion";
 
 function Logo() {
-    const texture = useTexture("/logossb.webp");
+    const texture = useTexture("/SHREE_SAI_BOREWELL_FINAL_LOGO.png");
     const meshRef = useRef<THREE.Mesh>(null);
 
     useFrame(({ clock }) => {
@@ -203,3 +203,4 @@ export function LiquidSplash() {
         </>
     );
 }
+
