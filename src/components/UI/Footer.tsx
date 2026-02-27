@@ -166,13 +166,6 @@ const Footer = () => {
                             textDecoration: 'none', color: 'var(--c-water-primary)', fontWeight: 'bold'
                         }}
                     >
-                        <Image
-                            src="/tejaskp_logo.png"
-                            alt="Tejaskp AI Software"
-                            width={40}
-                            height={40}
-                            style={{ borderRadius: '4px', objectFit: 'contain' }}
-                        />
                         Tejaskp AI Software
                     </a>
                 </div>
