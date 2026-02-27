@@ -18,9 +18,9 @@ export default function AboutPage() {
                     transition={{ duration: 0.8 }}
                 >
                     <h1 style={{ fontSize: '3.5rem', marginBottom: '1rem', fontFamily: 'var(--font-jakarta)' }}>
-                        We <span className="text-gradient-water">Dig Deeper</span> to Solve Your Water Needs
+                        About Shree Sai <span className="text-gradient-water">Borewell Drilling</span> Vadodara
                     </h1>
-                    <p style={{ color: 'var(--c-text-secondary)', fontSize: '1.2rem', maxWidth: '800px', margin: '0 auto' }}>
+                    <p style={{ color: 'var(--c-text-secondary)', fontSize: '1.2rem', maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
                         Trusted Borewell Drilling Contractors in Vadodara specializing in Direct Rotary techniques.
                     </p>
                 </motion.div>
@@ -34,7 +34,7 @@ export default function AboutPage() {
                     viewport={{ once: true }}
                     style={{ fontSize: '2.5rem', marginBottom: '2rem', borderLeft: '4px solid var(--c-water-primary)', paddingLeft: '1rem' }}
                 >
-                    Who We Are
+                    Who We Are - Borewell Experts
                 </motion.h2>
                 <motion.div
                     initial={{ opacity: 0 }}
@@ -56,7 +56,10 @@ export default function AboutPage() {
 
             {/* Mission & Vision */}
             <section style={{ padding: '4rem 2rem', background: 'rgba(38, 198, 218, 0.05)' }}>
-                <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '3rem' }}>
+                <div style={{ maxWidth: '1200px', margin: '0 0 3rem 0', textAlign: 'center' }}>
+                    <h2 style={{ fontSize: '2.5rem', margin: '0 auto' }}>Our Mission & Vision for <span className="text-gradient-water">Sustainable Water</span></h2>
+                </div>
+                <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 350px), 1fr))', gap: '3rem' }}>
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -87,13 +90,13 @@ export default function AboutPage() {
             {/* Why Direct Rotary */}
             <section style={{ padding: '6rem 2rem', maxWidth: '1000px', margin: '0 auto' }}>
                 <h2 style={{ fontSize: '2.5rem', marginBottom: '2rem', textAlign: 'center' }}>
-                    Why We Focus on <span className="text-gradient-water">Direct Rotary (DR) Drilling</span>
+                    Advanced <span className="text-gradient-water">Direct Rotary Drilling</span> Technology
                 </h2>
                 <p style={{ textAlign: 'center', marginBottom: '3rem', color: 'var(--c-text-secondary)', fontSize: '1.1rem' }}>
                     The soil and rock formations in and around Vadodara often require the flushing power, stability, and efficiency that Direct Rotary drilling provides.
                 </p>
 
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 250px), 1fr))', gap: '2rem' }}>
                     {[{
                         title: "Faster Drilling", desc: "Achieve smoother drilling in mixed soil formations."
                     }, {

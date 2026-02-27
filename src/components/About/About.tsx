@@ -23,8 +23,8 @@ const About = () => {
                 >
                     <span className={styles.badge}>Why Choose Shree Sai Borewell?</span>
                     <h2 className={styles.title}>
-                        A Reliable Water Solution <br />
-                        <span className="text-gradient-water">For The Future</span>
+                        Top-Rated Borewell Drilling <br />
+                        <span className="text-gradient-water">Contractor in Vadodara</span>
                     </h2>
                     <p className={styles.description}>
                         Water is the foundation of every home, industry, and agricultural activity.
@@ -42,16 +42,7 @@ const About = () => {
                         modern equipment, and practical field experience to deliver results.
                     </p>
 
-                    <div className={styles.statsGrid}>
-                        <div className={styles.statCard}>
-                            <span className={styles.statNumber}>100%</span>
-                            <span className={styles.statLabel}>Direct Rotary Precision</span>
-                        </div>
-                        <div className={styles.statCard}>
-                            <span className={styles.statNumber}>Fast</span>
-                            <span className={styles.statLabel}>Project Completion</span>
-                        </div>
-                    </div>
+
                 </motion.div>
 
                 <motion.div

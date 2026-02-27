@@ -28,9 +28,9 @@ export default function ProductsPage() {
                     transition={{ duration: 0.8 }}
                 >
                     <h1 style={{ fontSize: '3.5rem', marginBottom: '1rem', fontFamily: 'var(--font-jakarta)' }}>
-                        Built with <span className="text-gradient-water">Quality Materials</span>
+                        Premium Submersible Pumps <br /> <span className="text-gradient-water">& Borewell Pipes</span>
                     </h1>
-                    <p style={{ color: 'var(--c-text-secondary)', fontSize: '1.2rem', maxWidth: '800px', margin: '0 auto' }}>
+                    <p style={{ color: 'var(--c-text-secondary)', fontSize: '1.2rem', maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
                         Premium borewell materials and submersible pumps for long-lasting performance.
                     </p>
                 </motion.div>
@@ -39,7 +39,7 @@ export default function ProductsPage() {
             {/* Intro */}
             <section style={{ padding: '4rem 2rem', maxWidth: '1000px', margin: '0 auto' }}>
                 <div style={{ background: 'rgba(15, 35, 55, 0.5)', borderRadius: '16px', padding: '3rem', border: '1px solid rgba(74, 157, 199, 0.12)' }}>
-                    <h2 style={{ fontSize: '2rem', marginBottom: '1.5rem', color: '#fff' }}>Long-Lasting Borewells Start Here</h2>
+                    <h2 style={{ fontSize: '2rem', marginBottom: '1.5rem', color: '#fff' }}>Our Core Product Categories</h2>
                     <p style={{ lineHeight: '1.8', color: 'var(--c-text-secondary)', marginBottom: '1rem' }}>
                         A borewell is not just about drilling depth; its long-term success depends greatly on the quality of materials used inside it. At Shree Sai Borewell Drilling, Vadodara, we believe that strong internal construction ensures better water flow, prevents collapse, and extends the life of the borewell.
                     </p>
@@ -50,8 +50,8 @@ export default function ProductsPage() {
             </section>
 
             {/* Product Categories */}
-            <section style={{ padding: '4rem 2rem', maxWidth: '1200px', margin: '0 auto' }}>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '3rem' }}>
+            <section style={{ padding: '4rem 1.5rem', maxWidth: '1200px', margin: '0 auto' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
 
                     {/* PVC Casing Pipes - Special Layout with 3D Model */}
                     <motion.div
@@ -66,8 +66,8 @@ export default function ProductsPage() {
                             overflow: 'hidden'
                         }}
                     >
-                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', alignItems: 'center' }}>
-                            <div style={{ padding: '2.5rem' }}>
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', alignItems: 'center' }}>
+                            <div style={{ padding: '2.5rem 1.5rem' }}>
                                 <h3 style={{ fontSize: '2rem', marginBottom: '1rem', color: 'var(--c-water-light)' }}>PVC Casing Pipes</h3>
                                 <p style={{ marginBottom: '1.5rem', color: 'var(--c-text-secondary)' }}>
                                     Casing pipes are the backbone of any borewell. We install high-density, heavy-duty PVC casing pipes designed to perform in tough underground conditions.
@@ -136,8 +136,8 @@ export default function ProductsPage() {
                             flexDirection: 'column'
                         }}
                     >
-                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', alignItems: 'center' }}>
-                            <div style={{ padding: '2.5rem' }}>
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', alignItems: 'center' }}>
+                            <div style={{ padding: '2.5rem 1.5rem' }}>
                                 <h3 style={{ fontSize: '2rem', marginBottom: '1rem', color: 'var(--c-gold)' }}>Submersible Pumps</h3>
                                 <p style={{ marginBottom: '1.5rem', color: 'var(--c-text-secondary)' }}>
                                     Efficient water extraction with energy-saving pumps. We help you choose the right pump based on depth and yield.
@@ -207,7 +207,7 @@ export default function ProductsPage() {
 
                             <div style={{
                                 display: 'grid',
-                                gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+                                gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 250px), 1fr))',
                                 gap: '1.5rem'
                             }}>
                                 <ProductCard
@@ -279,8 +279,8 @@ export default function ProductsPage() {
                             flexDirection: 'column'
                         }}
                     >
-                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', alignItems: 'center' }}>
-                            <div style={{ padding: '2.5rem' }}>
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', alignItems: 'center' }}>
+                            <div style={{ padding: '2.5rem 1.5rem' }}>
                                 <h3 style={{ fontSize: '2rem', marginBottom: '1rem', color: 'var(--c-gold)' }}>Open Well Pumps</h3>
                                 <p style={{ marginBottom: '1.5rem', color: 'var(--c-text-secondary)' }}>
                                     Ideal for active wells with fluctuating water levels. These pumps are installed at the bottom of the well and do not require priming.
@@ -342,7 +342,7 @@ export default function ProductsPage() {
 
                             <div style={{
                                 display: 'grid',
-                                gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+                                gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 250px), 1fr))',
                                 gap: '1.5rem'
                             }}>
                                 <ProductCard
@@ -388,8 +388,8 @@ export default function ProductsPage() {
                             overflow: 'hidden'
                         }}
                     >
-                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', alignItems: 'center' }}>
-                            <div style={{ padding: '2.5rem' }}>
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', alignItems: 'center' }}>
+                            <div style={{ padding: '2.5rem 1.5rem' }}>
                                 <h3 style={{ fontSize: '2rem', marginBottom: '1rem', color: '#fff' }}>Filtration Gravel</h3>
                                 <p style={{ marginBottom: '1.5rem', color: 'var(--c-text-secondary)' }}>
                                     A crucial layer that acts as a natural filter. We use properly graded natural gravel to fill the space between the borewell wall and casing.

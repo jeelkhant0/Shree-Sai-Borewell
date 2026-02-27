@@ -42,7 +42,7 @@ const Services = () => {
         <section id="services" className={styles.servicesSection}>
             <div className={styles.headingWrapper}>
                 <span className={styles.subLabel}>Our Expertise</span>
-                <h2 className={styles.heading}>Comprehensive Solutions</h2>
+                <h2 className={styles.heading}>Comprehensive Borewell & Water Solutions</h2>
                 <p style={{ color: "var(--c-text-secondary)" }}>From exploration to extraction, we cover it all.</p>
             </div>
 

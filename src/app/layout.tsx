@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 
 import "./globals.css";
 import WaterBackground from "@/components/UI/WaterBackground";
-import { SplashProvider } from "@/context/SplashContext";
-import SplashWrapper from "@/components/Splash/SplashWrapper";
 
 
 
@@ -188,12 +186,9 @@ export default function RootLayout({
         className="antialiased"
         suppressHydrationWarning
       >
-        <SplashProvider>
-          <SplashWrapper />
-          <WaterBackground />
-          <FloatingContact />
-          {children}
-        </SplashProvider>
+        <WaterBackground />
+        <FloatingContact />
+        {children}
       </body>
     </html>
   );

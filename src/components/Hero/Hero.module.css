@@ -7,31 +7,29 @@
     background: transparent;
 }
 
-/* Static hero image — occupies the right blank area */
+/* Logo — occupies the right area */
 .heroImages {
     position: absolute;
     right: 0;
-    bottom: 0;
-    width: 55%;
+    top: 0;
+    width: 50%;
     height: 100%;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: center;
-    /* Push down so tall tower clears the navbar (≈70px height) */
-    padding-top: 80px;
+    padding: 80px 3rem 2rem 2rem;
     z-index: 2;
-    /* Blend left edge smoothly into background */
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 20%, black 100%);
-    mask-image: linear-gradient(to right, transparent 0%, black 20%, black 100%);
 }
 
-/* Single truck image — sits at bottom, tower has room above */
+/* Logo image wrap */
 .heroImgWrap {
-    position: relative;
-    width: 100%;
-    height: 87%;
-    flex-shrink: 0;
-    filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.7));
+    width: 85%;
+    max-width: 480px;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(0 0 40px rgba(30, 111, 168, 0.25));
 }
 
 @media (max-width: 1024px) {
@@ -41,39 +39,7 @@
     }
 }
 
-@media (max-width: 768px) {
-    .heroImages {
-        width: 100%;
-        height: 40%;
-        top: auto;
-        bottom: 5rem;
-        opacity: 0.3;
-        padding: 0 1rem;
-        -webkit-mask-image: linear-gradient(to top, black 30%, transparent 100%);
-        mask-image: linear-gradient(to top, black 30%, transparent 100%);
-    }
 
-    .heroImgWrap {
-        height: 100%;
-    }
-}
-
-@media (max-width: 480px) {
-    .heroImages {
-        width: 100%;
-        height: 55%;
-        top: auto;
-        bottom: 0;
-        opacity: 0.25;
-        padding: 0;
-        -webkit-mask-image: linear-gradient(to top, black 20%, transparent 100%);
-        mask-image: linear-gradient(to top, black 20%, transparent 100%);
-    }
-
-    .heroImgWrap {
-        height: 100%;
-    }
-}
 
 
 .overlay {
@@ -88,7 +54,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 6rem 2rem 0 4rem;
+    padding: 2rem 2rem 4rem 4rem;
     background: radial-gradient(circle at 30% 60%, rgba(30, 111, 168, 0.06) 0%, transparent 60%);
 }
 
@@ -220,6 +186,14 @@
 }
 
 @media (max-width: 768px) {
+    .heroContainer {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        min-height: 100dvh;
+        overflow: visible;
+    }
+
     .headline {
         font-size: clamp(1.8rem, 9vw, 3rem);
         word-break: break-word;
@@ -231,11 +205,27 @@
     }
 
     .overlay {
-        /* Full width on mobile since images are hidden/faded */
+        position: static;
         width: 100%;
-        padding: 0 1.2rem;
+        height: auto;
+        padding: 8rem 1.5rem 1.5rem 1.5rem;
         justify-content: flex-start;
-        padding-top: 18vh;
+    }
+
+    .heroImages {
+        position: static;
+        width: 100%;
+        height: auto;
+        padding: 1rem 2rem 3rem 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .heroImgWrap {
+        width: 320px;
+        max-width: 80vw;
+        aspect-ratio: 1 / 1;
     }
 
     .buttonGroup {
@@ -259,13 +249,17 @@
 }
 
 @media (max-width: 480px) {
-    .heroContainer {
-        min-height: 100dvh;
+    .overlay {
+        padding: 8rem 1rem 1rem 1rem;
     }
 
-    .overlay {
-        padding: 0 1rem;
-        padding-top: 16vh;
+    .heroImages {
+        padding: 1rem 1.5rem 2.5rem 1.5rem;
+    }
+
+    .heroImgWrap {
+        width: 260px;
+        max-width: 80vw;
     }
 
     .headline {
@@ -282,7 +276,6 @@
 
     .scrollIndicator {
         display: none;
-        /* Save space on very small phones */
     }
 }
 

@@ -89,6 +89,7 @@
 .featureDesc {
     color: var(--c-text-secondary);
     line-height: 1.6;
+    text-align: left;
 }
 
 @media (max-width: 768px) {

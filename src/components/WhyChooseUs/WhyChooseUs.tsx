@@ -33,7 +33,7 @@ const WhyChooseUs = () => {
             <div className={styles.container}>
                 <div className={styles.header}>
                     <span style={{ color: 'var(--c-water-light)', letterSpacing: '0.1em', fontWeight: 'bold' }}>OUR EXPERTISE</span>
-                    <h2 className={styles.title}>Our Core Strengths</h2>
+                    <h2 className={styles.title}>Why Choose Our Direct Rotary Drilling Expertise?</h2>
                     <p className={styles.subtitle}>
                         We combine specialized technology with local geological mastery to deliver the best water solutions.
                     </p>

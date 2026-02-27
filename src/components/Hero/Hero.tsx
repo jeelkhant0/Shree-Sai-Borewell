@@ -4,13 +4,7 @@ import React from "react";
 import styles from "./Hero.module.css";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import dynamic from "next/dynamic";
-
-// Dynamically load the 3D canvas — SSR must be off for Three.js
-const HeroTruck3D = dynamic(() => import("./HeroTruck3D"), {
-    ssr: false,
-    loading: () => null,
-});
+import Image from "next/image";
 
 const Hero = () => {
     const scrollToContact = () => {
@@ -19,18 +13,6 @@ const Hero = () => {
 
     return (
         <section className={styles.heroContainer}>
-            {/* Right-side 3D truck — same position as the old static image */}
-            <motion.div
-                className={styles.heroImages}
-                initial={{ opacity: 0, x: 60 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 1, delay: 0.4 }}
-            >
-                {/* The canvas fills the heroImages container exactly */}
-                <div className={styles.heroImgWrap}>
-                    <HeroTruck3D />
-                </div>
-            </motion.div>
 
             <div className={styles.overlay}>
                 <motion.div
@@ -42,7 +24,7 @@ const Hero = () => {
                     <span className={styles.tagline}>Reliable • Fast • Professional</span>
                     <h1 className={styles.headline}>
                         Secure Your <span className="text-gradient-water">Water Source</span> <br />
-                        with <span className="text-gradient-gold">Precision Direct Rotary Drilling</span>
+                        with <span className="text-gradient-gold">Precision Direct Rotary(DR) Borewell Drilling</span>
                     </h1>
                     <p className={styles.subheadline}>
                         Advanced Direct Rotary (DR) borewell drilling in Vadodara with modern machinery,
@@ -63,12 +45,25 @@ const Hero = () => {
                 </motion.div>
             </div>
 
-            <div className={styles.scrollIndicator}>
-                <div className={styles.mouse}>
-                    <div className={styles.wheel}></div>
+            {/* Right-side Logo — after overlay so it shows below buttons on mobile */}
+            <motion.div
+                className={styles.heroImages}
+                initial={{ opacity: 0, x: 60 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1, delay: 0.4 }}
+            >
+                <div className={styles.heroImgWrap}>
+                    <Image
+                        src="/SHREE_SAI_BOREWELL_FINAL_LOGO.png"
+                        alt="Shree Sai Borewell Logo"
+                        width={500}
+                        height={500}
+                        style={{ width: "100%", height: "100%", objectFit: "contain" }}
+                        priority
+                    />
                 </div>
-                <span>SCROLL TO EXPLORE</span>
-            </div>
+            </motion.div>
+
         </section>
     );
 };

@@ -20,7 +20,7 @@ export default function BlogPage() {
                     <h1 style={{ fontSize: '3.5rem', marginBottom: '1rem', fontFamily: 'var(--font-jakarta)' }}>
                         The <span className="text-gradient-water">Drilling Diary</span>
                     </h1>
-                    <p style={{ color: 'var(--c-text-secondary)', fontSize: '1.2rem', maxWidth: '800px', margin: '0 auto' }}>
+                    <p style={{ color: 'var(--c-text-secondary)', fontSize: '1.2rem', maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
                         A Knowledge Hub for Borewell Owners, Industries & Farmers
                     </p>
                 </motion.div>
@@ -40,7 +40,7 @@ export default function BlogPage() {
 
             {/* Blog Posts */}
             <section style={{ padding: '2rem 2rem 6rem', maxWidth: '1200px', margin: '0 auto' }}>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '3rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 350px), 1fr))', gap: '3rem' }}>
 
                     {/* Post 1 */}
                     <motion.div

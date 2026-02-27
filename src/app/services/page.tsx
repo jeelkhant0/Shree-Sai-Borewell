@@ -18,9 +18,9 @@ export default function ServicesPage() {
                     transition={{ duration: 0.8 }}
                 >
                     <h1 style={{ fontSize: '3.5rem', marginBottom: '1rem', fontFamily: 'var(--font-jakarta)' }}>
-                        Precision <span className="text-gradient-water">Direct Rotary</span> Drilling
+                        Expert Borewell Drilling <span className="text-gradient-water">Services & Maintenance</span> in Vadodara
                     </h1>
-                    <p style={{ color: 'var(--c-text-secondary)', fontSize: '1.2rem', maxWidth: '800px', margin: '0 auto' }}>
+                    <p style={{ color: 'var(--c-text-secondary)', fontSize: '1.2rem', maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
                         Specialized borewell drilling services for Domestic, Industrial, and Agricultural needs.
                     </p>
                 </motion.div>
@@ -29,7 +29,7 @@ export default function ServicesPage() {
             {/* Core Expertise Intro */}
             <section style={{ padding: '4rem 2rem', maxWidth: '1000px', margin: '0 auto' }}>
                 <div style={{ background: 'rgba(15, 35, 55, 0.5)', borderRadius: '16px', padding: '3rem', border: '1px solid rgba(74, 157, 199, 0.12)' }}>
-                    <h2 style={{ fontSize: '2rem', marginBottom: '1.5rem', color: '#fff' }}>Our Core Expertise</h2>
+                    <h2 style={{ fontSize: '2rem', marginBottom: '1.5rem', color: '#fff' }}>Our Core Drilling Services</h2>
                     <p style={{ lineHeight: '1.8', color: 'var(--c-text-secondary)', marginBottom: '1rem' }}>
                         At Shree Sai Borewell Drilling, we focus exclusively on Direct Rotary (DR) drilling, a modern and highly efficient method known for accuracy, speed, and deep water access. By specializing in a single advanced drilling technique, we ensure better results, stronger bore structures, and consistent water yield for every type of project.
                     </p>
@@ -41,7 +41,7 @@ export default function ServicesPage() {
 
             {/* Service Categories */}
             <section style={{ padding: '4rem 2rem', maxWidth: '1200px', margin: '0 auto' }}>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(500px, 1fr))', gap: '3rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 500px), 1fr))', gap: '3rem' }}>
 
                     {/* Domestic */}
                     <motion.div

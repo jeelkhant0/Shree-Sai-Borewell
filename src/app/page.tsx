@@ -2,19 +2,16 @@
 
 import Navbar from "@/components/UI/Navbar";
 import Hero from "@/components/Hero/Hero";
-import dynamic from "next/dynamic";
 import About from "@/components/About/About";
-
-// Lazily loaded below-the-fold sections
-const WhyChooseUs = dynamic(() => import("@/components/WhyChooseUs/WhyChooseUs"), { ssr: false });
-const Process = dynamic(() => import("@/components/Process/Process"), { ssr: false });
-const Beneficiaries = dynamic(() => import("@/components/Beneficiaries/Beneficiaries"), { ssr: false });
-const Testimonials = dynamic(() => import("@/components/Testimonials/Testimonials"), { ssr: false });
-const LiquidGallery = dynamic(() => import("@/components/Gallery/LiquidGallery"), { ssr: false });
-const Showcase = dynamic(() => import("@/components/Showcase/Showcase"), { ssr: false });
-const Quality = dynamic(() => import("@/components/Quality/Quality"), { ssr: false });
-const Contact = dynamic(() => import("@/components/Contact/Contact"), { ssr: false });
-const Footer = dynamic(() => import("@/components/UI/Footer"), { ssr: false });
+import WhyChooseUs from "@/components/WhyChooseUs/WhyChooseUs";
+import Process from "@/components/Process/Process";
+import Beneficiaries from "@/components/Beneficiaries/Beneficiaries";
+import Testimonials from "@/components/Testimonials/Testimonials";
+import LiquidGallery from "@/components/Gallery/LiquidGallery";
+import Showcase from "@/components/Showcase/Showcase";
+import Quality from "@/components/Quality/Quality";
+import Contact from "@/components/Contact/Contact";
+import Footer from "@/components/UI/Footer";
 
 export default function Home() {
   return (

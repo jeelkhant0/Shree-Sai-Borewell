@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import styles from './Navbar.module.css';
 
 const Navbar = () => {
@@ -46,6 +47,11 @@ const Navbar = () => {
 
     const toggleMenu = useCallback(() => setIsOpen(prev => !prev), []);
     const closeMenu = useCallback(() => setIsOpen(false), []);
+    const pathname = usePathname();
+
+    const getLinkClass = (path: string) => {
+        return `${styles.link} ${pathname === path ? styles.activeLink : ''}`;
+    };
 
     return (
         <>
@@ -96,23 +102,23 @@ const Navbar = () => {
 
                     {/* Nav links */}
                     <ul className={`${styles.navLinks} ${isOpen ? styles.open : ''}`}>
-                        <li><Link href="/" className={styles.link} onClick={closeMenu}>Home</Link></li>
-                        <li><Link href="/about" className={styles.link} onClick={closeMenu}>About</Link></li>
-                        <li><Link href="/services" className={styles.link} onClick={closeMenu}>Services</Link></li>
-                        <li><Link href="/products" className={styles.link} onClick={closeMenu}>Products</Link></li>
-                        <li><Link href="/blog" className={styles.link} onClick={closeMenu}>Blog</Link></li>
+                        <li><Link href="/" className={getLinkClass('/')} onClick={closeMenu}>Home</Link></li>
+                        <li><Link href="/about" className={getLinkClass('/about')} onClick={closeMenu}>About</Link></li>
+                        <li><Link href="/services" className={getLinkClass('/services')} onClick={closeMenu}>Services</Link></li>
+                        <li><Link href="/products" className={getLinkClass('/products')} onClick={closeMenu}>Products</Link></li>
+                        <li><Link href="/blog" className={getLinkClass('/blog')} onClick={closeMenu}>Blog</Link></li>
                         <li><Link href="/#contact" className={styles.link} onClick={closeMenu}>Contact</Link></li>
                         <li className={styles.mobileCta}>
-                            <Link href="/#contact" className={styles.ctaButton} onClick={closeMenu}>
-                                Get Quote
-                            </Link>
+                            <a href="tel:+919510187991" className={styles.ctaButton} onClick={closeMenu}>
+                                📞 9510187991
+                            </a>
                         </li>
                     </ul>
 
-                    {/* Desktop CTA */}
-                    <Link href="/#contact" className={`${styles.ctaButton} ${styles.desktopCta}`}>
-                        Get Quote
-                    </Link>
+                    {/* Desktop CTA - Phone Call */}
+                    <a href="tel:+919510187991" className={`${styles.ctaButton} ${styles.desktopCta}`}>
+                        📞 9510187991
+                    </a>
                 </div>
             </nav>
         </>

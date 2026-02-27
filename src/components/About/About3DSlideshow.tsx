@@ -65,6 +65,16 @@ const About3DSlideshow = () => {
                         transition={{ duration: 0.40, ease: "easeInOut" }}
                         style={{ position: "absolute", inset: "2rem" }}
                     >
+                        {/* 
+                            =========================================================
+                            [ FUTURE IMAGE PLACEMENT INSTRUCTIONS ]
+                            1. Place your new image files inside the 'public/about/' folder.
+                            2. Go to the top of this file (line 8) and update the 'image' paths in the SLIDES array.
+                            3. Uncomment the <Image> component below.
+                            =========================================================
+                        */}
+
+                        {/* 
                         <Image
                             src={SLIDES[currentIndex].image}
                             alt={SLIDES[currentIndex].name}
@@ -73,11 +83,13 @@ const About3DSlideshow = () => {
                             quality={100}
                             style={{ objectFit: "contain", objectPosition: "center" }}
                             priority={currentIndex === 0}
-                        />
+                        /> 
+                        */}
                     </motion.div>
                 </AnimatePresence>
 
-                {/* Progress dots — right side, inside image area */}
+                {/* Progress dots — REMOVED PER USER, UNCOMMENT IN THE FUTURE */}
+                {/*
                 <div style={{
                     position: "absolute", top: "50%", right: "0.75rem",
                     transform: "translateY(-50%)",
@@ -99,16 +111,17 @@ const About3DSlideshow = () => {
                         />
                     ))}
                 </div>
+                */}
             </div>
 
-            {/* Controls bar — below image, no overlap */}
+            {/* Controls bar — REMOVED PER USER, UNCOMMENT IN THE FUTURE */}
+            {/*
             <div style={{
                 flex: "0 0 auto",
                 display: "flex", alignItems: "center", justifyContent: "center",
                 gap: "1.5rem", padding: "0.75rem 1rem",
                 borderTop: "1px solid rgba(255,255,255,0.07)",
             }}>
-                {/* Prev button */}
                 <button
                     onClick={prev}
                     aria-label="Previous"
@@ -125,7 +138,6 @@ const About3DSlideshow = () => {
                     <ChevronLeft size={20} />
                 </button>
 
-                {/* Title badge */}
                 <AnimatePresence mode="wait">
                     <motion.div
                         key={`title-${currentIndex}`}
@@ -146,7 +158,6 @@ const About3DSlideshow = () => {
                     </motion.div>
                 </AnimatePresence>
 
-                {/* Next button */}
                 <button
                     onClick={next}
                     aria-label="Next"
@@ -163,6 +174,7 @@ const About3DSlideshow = () => {
                     <ChevronRight size={20} />
                 </button>
             </div>
+            */}
         </div>
     );
 };

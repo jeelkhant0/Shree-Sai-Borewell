@@ -64,6 +64,8 @@
     display: flex;
     gap: 2rem;
     list-style: none;
+    margin-left: auto;
+    margin-right: 2rem;
 }
 
 .link {
@@ -91,8 +93,13 @@
     transition: width 0.3s ease;
 }
 
-.link:hover::after {
+.link:hover::after,
+.activeLink::after {
     width: 100%;
+}
+
+.activeLink {
+    color: var(--c-text-primary);
 }
 
 .ctaButton {
@@ -107,6 +114,7 @@
     letter-spacing: 0.08em;
     cursor: pointer;
     transition: background 0.2s ease;
+    text-decoration: none;
     /* No glow box-shadow */
 }
 
